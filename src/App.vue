@@ -3,37 +3,28 @@
     <v-app-bar
       app
       color="#Ff8600"
-     
+      
+        class="barra"
     >
       <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
+    
 
         <v-img
           alt="Vuetify Name"
           contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
+          min-width="70"
+         
+          src="../src/assets/logo.png"
+         
+          width="10"
+          class="imagem"
         />
+        <h2 style="color: white;position: relative;margin-left: -22%; left: 21%;" > Tech Burguer</h2>
       </div>
 
       <v-spacer></v-spacer>
 
-      <v-btn
-        
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
+    
     </v-app-bar>
 
     <v-main>
@@ -52,3 +43,13 @@ export default {
   }),
 };
 </script>
+<style scoped>
+
+.barra{
+  left: 0px !important; 
+  
+}
+.imagem{
+  margin-left: 22% !important;
+}
+</style>
