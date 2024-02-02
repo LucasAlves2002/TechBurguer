@@ -1,0 +1,85 @@
+<template>
+    <v-sheet
+    class="mx-auto"
+    elevation="8"
+    max-width="800"
+  >
+    <v-slide-group
+      v-model="model"
+      class="pa-4"
+      show-arrows
+    >
+      <v-slide-item
+        v-for="(image, index) in images"
+        :key="index"
+        v-slot="{ active, toggle }"
+      >
+        <v-card
+          :color="active ? 'primary' : 'grey lighten-1'"
+          class="ma-4"
+          height="200"
+          width="150"
+          @click="toggle"
+        >
+          <v-img
+            :src="image"
+            height="100%"
+            width="100%"
+            @click.stop="toggle"
+          ></v-img>
+          <v-row
+            class="fill-height"
+            align="center"
+            justify="center"
+          >
+            <v-scale-transition>
+              <v-icon
+                v-if="active"
+                color="white"
+                size="48"
+                v-text="'mdi-close-circle-outline'"
+              ></v-icon>
+            </v-scale-transition>
+          </v-row>
+        </v-card>
+      </v-slide-item>
+    </v-slide-group>
+
+    <v-expand-transition>
+      <v-sheet
+        v-if="model != null"
+        height="200"
+        tile
+      >
+        <v-row
+          class="fill-height"
+          align="center"
+          justify="center"
+        >
+          <h3 class="text-h6">
+            Selected {{ model }}
+          </h3>
+        </v-row>
+      </v-sheet>
+    </v-expand-transition>
+  </v-sheet>
+</template>
+
+<script>
+
+export default {
+    name: 'SliderView',
+
+  data: () => ({
+    model: null,
+    images: [
+    require('@/assets/hamburguer0.jpg'),
+    require('@/assets/hamburguer1.jpg'),
+    require('@/assets/hamburguer2.jpg') ,
+    require('@/assets/hamburguer3.jpg') ,
+    require('@/assets/hamburguer4.jpg') ,
+      // Adicione mais URLs de imagens conforme necessário
+    ],
+  }),
+}
+</script>
